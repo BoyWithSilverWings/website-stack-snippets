@@ -1,7 +1,10 @@
 <template>
   <div class="app">
-    <div class="option-bar grid-item"></div>
-    <div class="html-code grid-item"></div>
+    <div class="option-bar grid-item">
+    </div>
+    <div class="html-code grid-item">
+      <code-window></code-window>
+    </div>
     <div class="css-code grid-item"></div>
     <div class="js-code grid-item"></div>
     <div class="result grid-item"></div>
@@ -9,10 +12,12 @@
 </template>
 
 <script>
+import CodeWindow from "../components/CodeWindow.vue";
+
 export default {
   name: 'home',
   components: {
-
+    'code-window': CodeWindow,
   }
 }
 </script>
@@ -26,7 +31,7 @@ export default {
   }
 
   .grid-item {
-    border: 0.1rem solid #cccccc;
+    border: 1px solid #cccccc;
   }
 
   .option-bar {
