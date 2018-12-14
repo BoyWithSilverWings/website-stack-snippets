@@ -3,10 +3,20 @@
     <div class="option-bar grid-item">
     </div>
     <div class="html-code grid-item">
-      <code-window></code-window>
+      <code-window
+        code-mode="text/html"
+        v-model="html"></code-window>
     </div>
-    <div class="css-code grid-item"></div>
-    <div class="js-code grid-item"></div>
+    <div class="css-code grid-item">
+      <code-window
+        code-mode="text/css"
+        v-model="css"></code-window>
+    </div>
+    <div class="js-code grid-item">
+      <code-window
+        code-mode="javascript"
+        v-model="javascript"></code-window>
+    </div>
     <div class="result grid-item"></div>
   </div>
 </template>
@@ -16,6 +26,13 @@ import CodeWindow from "../components/CodeWindow.vue";
 
 export default {
   name: 'home',
+  data: function() {
+    return {
+      html: "<html></html>",
+      css: "",
+      javascript: "",
+    }
+  },
   components: {
     'code-window': CodeWindow,
   }

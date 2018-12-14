@@ -1,21 +1,28 @@
 <template>
-  <codemirror v-model="code" :options="cmOptions"></codemirror>
+  <div>
+  <codemirror :value="value" :options="cmOptions" @input="onCodeChange"></codemirror>
+  </div>
 </template>
 
 <script>
 import { codemirror } from 'vue-codemirror';
 import 'codemirror/lib/codemirror.css';
-import 'codemirror/theme/base16-dark.css';
-import 'codemirror/mode/javascript/javascript.js'
+import 'codemirror/theme/dracula.css';
+import 'codemirror/mode/xml/xml.js';
+import 'codemirror/mode/css/css.js';
+import 'codemirror/mode/javascript/javascript.js';
 
 export default {
+  props: {
+    value: String,
+    codeMode: String,
+  },
   data: function() {
     return {
-      code: "const a = 10;",
       cmOptions: {
         tabSize: 2,
-        mode: 'text/javascript',
-        theme: 'base16-dark',
+        theme: 'dracula',
+        mode: this.codeMode,
         lineNumbers: true,
         line: true,
       },
@@ -23,6 +30,11 @@ export default {
   },
   components: {
     codemirror,
+  },
+  methods: {
+    onCodeChange: function(value) {
+      this.$emit("input", value);
+    },
   }
 }
 </script>
