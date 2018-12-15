@@ -1,7 +1,5 @@
 <template>
-  <div>
   <codemirror :value="value" :options="cmOptions" @input="onCodeChange"></codemirror>
-  </div>
 </template>
 
 <script>
@@ -38,4 +36,14 @@ export default {
   }
 }
 </script>
+
+<style>
+  .vue-codemirror {
+    height: 100%;
+  }
+  .CodeMirror {
+    height: 100%;
+  }
+</style>
+
 
