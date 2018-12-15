@@ -17,7 +17,9 @@
         code-mode="javascript"
         v-model="javascript"></code-window>
     </div>
-    <div class="result grid-item"></div>
+    <div class="result grid-item">
+      <iframe :srcdoc="completeCode" height="100%" width="100%" frameborder="0"></iframe>
+    </div>
   </div>
 </template>
 
@@ -28,13 +30,28 @@ export default {
   name: 'home',
   data: function() {
     return {
-      html: "<html></html>",
+      html: "",
       css: "",
       javascript: "",
     }
   },
   components: {
     'code-window': CodeWindow,
+  },
+  computed: {
+    completeCode: function() {
+      return `
+        <html>
+          <style>${this.css}</style>
+          <body>
+            ${this.html}
+            <script>
+              ${this.javascript}
+            <\/script>
+          </body>
+        </html>
+      `;
+    }
   }
 }
 </script>

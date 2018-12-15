@@ -8,9 +8,10 @@
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
+    "@emmetio/codemirror-plugin": "^0.5.4",
     "codemirror": "^5.42.0",
+    "lodash": "^4.17.11",
     "vue": "^2.5.17",
-    "vue-codemirror": "^4.0.6",
     "vue-router": "^3.0.2"
   },
   "devDependencies": {
