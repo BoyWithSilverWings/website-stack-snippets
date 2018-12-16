@@ -1,7 +1,7 @@
 <template>
   <div class="app">
     <div class="option-bar grid-item">
-      <toolbar></toolbar>
+      <toolbar v-on:save="saveTemplate"></toolbar>
     </div>
     <div class="html-code grid-item">
       <code-window
@@ -56,6 +56,25 @@ export default {
           </body>
         </html>
       `;
+    }
+  },
+  methods: {
+    saveTemplate: function() {
+      const templateFormat = `<!-- begin snippet: js hide: false console: true babel: false -->
+
+      <!-- language: lang-js -->
+
+          ${this.javascript}
+
+      <!-- language: lang-css -->
+
+          ${this.css}
+
+      <!-- language: lang-html -->
+
+          ${this.html}
+
+      <!-- end snippet -->`
     }
   }
 }

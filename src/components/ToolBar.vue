@@ -4,8 +4,8 @@
       <img src="../assets/logo.png" alt="" class="logo-image">
     </a>
     <div class="action-buttons">
-      <button class="btn btn-primary">Details</button>
-      <button class="btn btn-success save-btn">Save</button>
+      <button v-on:click="$emit('details')" class="btn btn-primary">Details</button>
+      <button v-on:click="$emit('save')" class="btn btn-success save-btn">Save</button>
     </div>
   </div>
 </template>
