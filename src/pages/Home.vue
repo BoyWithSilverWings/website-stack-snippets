@@ -74,7 +74,7 @@ export default {
 
           ${this.html}
 
-      <!-- end snippet -->`
+      <!-- end snippet -->`;
     }
   }
 }
