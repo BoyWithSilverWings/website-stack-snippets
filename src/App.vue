@@ -5,6 +5,7 @@
 </template>
 
 <script>
+import "bulma/css/bulma.css";
 import VueRouter from "vue-router";
 
 export default {
@@ -19,9 +20,9 @@ export default {
 body {
   min-height: 100vh;
   margin: 0;
+  font-family: 'Montserrat', sans-serif;
 }
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: #2c3e50;

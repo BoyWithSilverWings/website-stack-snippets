@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div class="container-cl">
     <a href="/" class="logo">
       <img src="../assets/logo.png" alt="" class="logo-image">
     </a>
@@ -17,7 +17,7 @@ export default {
 </script>
 
 <style scoped>
-  .container {
+  .container-cl {
     display: flex;
     flex-direction: column;
     align-items: center;

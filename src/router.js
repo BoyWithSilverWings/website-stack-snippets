@@ -1,13 +1,13 @@
 import VueRouter from "vue-router";
 
 import Home from "./pages/Home.vue";
-import Template from "./pages/Template.vue";
+import TemplateScreen from "./pages/TemplateScreen.vue";
 
 const router = new VueRouter({
   mode: 'history',
   base: __dirname,
   routes: [
-    { path: '/templates/create', component: Template },
+    { path: '/templates/create', component: TemplateScreen },
     { path: '/', name: 'home', component: Home },
   ]
 });

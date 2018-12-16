@@ -9,7 +9,10 @@ import App from "./App.vue";
 Vue.config.productionTip = false;
 
 Vue.use(VueRouter);
-Vue.use(VModal);
+Vue.use(VModal, {
+  dynamic: true,
+  injectModalsContainer: true,
+});
 
 new Vue({
   router,

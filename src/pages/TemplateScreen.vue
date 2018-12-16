@@ -28,9 +28,10 @@
 import * as Babel from "@babel/standalone";
 import CodeWindow from "../components/CodeWindow.vue";
 import ToolBar from '../components/ToolBar.vue';
+import DetailModal from "../components/DetailModal.vue";
 
 export default {
-  name: 'template',
+  name: 'template-screen',
   data: function() {
     return {
       html: "",
@@ -41,6 +42,11 @@ export default {
   components: {
     'code-window': CodeWindow,
     'toolbar': ToolBar,
+  },
+  mounted: function() {
+    this.$modal.show(DetailModal, {}, {
+      height: "auto",
+    });
   },
   computed: {
     completeCode: function() {
