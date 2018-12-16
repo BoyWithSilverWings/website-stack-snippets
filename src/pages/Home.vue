@@ -1,6 +1,7 @@
 <template>
   <div class="app">
     <div class="option-bar grid-item">
+      <toolbar></toolbar>
     </div>
     <div class="html-code grid-item">
       <code-window
@@ -24,7 +25,9 @@
 </template>
 
 <script>
+import * as Babel from "@babel/standalone";
 import CodeWindow from "../components/CodeWindow.vue";
+import ToolBar from '../components/ToolBar.vue';
 
 export default {
   name: 'home',
@@ -37,6 +40,7 @@ export default {
   },
   components: {
     'code-window': CodeWindow,
+    'toolbar': ToolBar,
   },
   computed: {
     completeCode: function() {
@@ -45,6 +49,7 @@ export default {
           <style>${this.css}</style>
           <body>
             ${this.html}
+            <pre>${Babel.transform(this.javascript, {presets: ['es2015']}).code}</pre>
             <script>
               ${this.javascript}
             <\/script>
@@ -60,7 +65,7 @@ export default {
   .app {
     display: grid;
     grid-template-rows: 1fr 1fr;
-    grid-template-columns: 5rem 1fr 1fr;
+    grid-template-columns: 6rem 1fr 1fr;
     height: 100vh;
   }
 
