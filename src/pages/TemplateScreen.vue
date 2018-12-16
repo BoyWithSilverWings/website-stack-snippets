@@ -1,7 +1,13 @@
 <template>
   <div class="app">
     <div class="option-bar grid-item">
-      <toolbar v-on:save="saveTemplate"></toolbar>
+      <toolbar
+        :title="title"
+        :description="description"
+        :tags="tags"
+        :author="author"
+        v-on:save="saveTemplate"
+      ></toolbar>
     </div>
     <div class="html-code grid-item">
       <code-window
@@ -34,9 +40,13 @@ export default {
   name: 'template-screen',
   data: function() {
     return {
+      title: "React Base Modal",
+      description: "Description of the starter project",
+      tags: [],
       html: "",
       css: "",
       javascript: "",
+      author: "",
     }
   },
   components: {
@@ -44,9 +54,9 @@ export default {
     'toolbar': ToolBar,
   },
   mounted: function() {
-    this.$modal.show(DetailModal, {}, {
-      height: "auto",
-    });
+    // this.$modal.show(DetailModal, {}, {
+    //   height: "auto",
+    // });
   },
   computed: {
     completeCode: function() {
@@ -90,7 +100,7 @@ export default {
   .app {
     display: grid;
     grid-template-rows: 1fr 1fr;
-    grid-template-columns: 6rem 1fr 1fr;
+    grid-template-columns: 10rem 1fr 1fr;
     height: 100vh;
   }
 

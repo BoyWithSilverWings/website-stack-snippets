@@ -3,8 +3,14 @@
     <a href="/" class="logo">
       <img src="../assets/logo.png" alt="" class="logo-image">
     </a>
+    <div class="second-container">
+      <h1 class="title">{{ title }}</h1>
+      <p class="description bold">{{ description }}</p>
+      <p class="sub">{{ tags.join(", ")}}</p>
+      <p class="sub">Author: <span class="bold">{{ author }}</span></p>
+      <p class="sub">Created: <span class="bold">{{created}}</span></p>
+    </div>
     <div class="action-buttons">
-      <button v-on:click="$emit('details')" class="btn btn-primary">Details</button>
       <button v-on:click="$emit('save')" class="btn btn-success save-btn">Save</button>
     </div>
   </div>
@@ -12,7 +18,13 @@
 
 <script>
 export default {
-  
+  props: {
+    title: String,
+    description: String,
+    tags: Array,
+    author: String,
+    created: String,
+  }
 }
 </script>
 
@@ -21,6 +33,26 @@ export default {
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding: 0 0.4rem;
+  }
+  .second-container {
+    padding: 2rem 0;
+    border-top: 1px solid #f5f0f0;
+    border-bottom: 1px solid #f5f0f0;
+  }
+  .title {
+    font-weight: 600;
+    font-size: 1rem;
+  }
+  .description {
+    font-size: 0.9rem;
+  }
+  .bold {
+    font-weight: 500;
+  }
+  .sub {
+    font-size: 0.8rem;
+    margin: 0.5rem 0;
   }
   .logo {
     height: 4rem;
