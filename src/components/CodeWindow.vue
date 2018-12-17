@@ -33,6 +33,7 @@ export default {
       tabSize: 2,
       theme: 'dracula',
       mode: this.codeMode,
+      lineWrapping: true,
       extraKeys: {
         "Ctrl-Space": "autocomplete",
         'Tab': 'emmetExpandAbbreviation',
@@ -53,11 +54,9 @@ export default {
 </script>
 
 <style>
-  .vue-codemirror {
-    height: 100%;
-  }
   .CodeMirror {
     height: 100%;
+    max-width: 100%;
   }
 </style>
 
