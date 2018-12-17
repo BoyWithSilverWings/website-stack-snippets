@@ -9,6 +9,7 @@
       <p class="sub">{{ tags.join(", ")}}</p>
       <p class="sub">Author: <span class="bold">{{ author }}</span></p>
       <p class="sub">Created: <span class="bold">{{created}}</span></p>
+      <button v-on:click="$emit('edit')" class="btn btn-primary edit-btn">Edit</button>
     </div>
     <div class="action-buttons">
       <button v-on:click="$emit('save')" class="btn btn-success save-btn">Save</button>
@@ -70,6 +71,10 @@ export default {
     padding: 1rem 0;
     border-top: 1px solid #f5f0f0;
     border-bottom: 1px solid #f5f0f0;
+  }
+  .edit-btn {
+    margin: 1rem auto;
+    display: block;
   }
 </style>
 
