@@ -21,6 +21,8 @@ body {
   min-height: 100vh;
   margin: 0;
   font-family: 'Montserrat', sans-serif;
+  min-height: 100vh;
+  background-color: #F7FFF7;
 }
 #app {
   -webkit-font-smoothing: antialiased;
